@@ -53,22 +53,9 @@ class Main extends React.Component {
         <GlobalStyle whiteColor />
           <MainWrap>
             <Switch location={location}>
-              <Route exact path="/" render={props =>
-                <Home e={e} p={p}
-                  categories={categories}
-                  subCategories={subCategories}
-                  products={products}
-                  language={language}
-                  {...props} />}
-                />
-              <Route exact path="/delivery" component={Delivery}/>
-              <Route exact path="/dostawa" component={Delivery}/>
-              <Route exact path="/terms" component={Terms}/>
-              <Route exact path="/privacy" component={Privacy}/>
-              <Route exact path="/about" component={About}/>
-              <Route exact path="/bags" render={props => <ProductsList  e={e} p={p} categories={categories} subCategories={subCategories} products={products} showAlert={showAlert} language={language} {...props} />} />
-              <Route exact path="/:catId/:productId" render={props => <Product categories={categories} subCategories={subCategories} products={products} showAlert={showAlert} language={language} {...props} />} />
-              <Route component={NotFound} />
+              <Route>
+                <Home />
+              </Route>
             </Switch>
           </MainWrap>
           <Footer />
